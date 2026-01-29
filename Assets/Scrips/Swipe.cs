@@ -46,7 +46,7 @@ public class Swipe : MonoBehaviour
         {
             onSwipeRight?.Invoke();
         }
-        else if (angle > 45f && angle < -135f)
+        else if (angle > 45f && angle < 135f)
         {
             onSwipeUp?.Invoke();
         }
