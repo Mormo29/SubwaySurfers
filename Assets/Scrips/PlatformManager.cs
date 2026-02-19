@@ -6,16 +6,20 @@ public class PlataformManager : MonoBehaviour
     private Transform platformsPivot;
     [SerializeField]
     private InstantiatePoolObjects[] platformPrefabs;
+    [SerializeField]
+    private InstantiatePoolObjects[] securePlatformPrefabs;
     [SerializeField] 
     private int initialPlatforms = 5;
     [SerializeField]
     private float speed = 5f;
     private bool isRunning = true;
     private GameObject lastPlatform;
+    private int platformsInstantiated = 0;
 
     public void StartGame()
     {
         lastPlatform = null;
+        platformsInstantiated = 0;
         InitializePlatforms();
         InstantiatePlatforms(initialPlatforms);
         transform.position = platformsPivot.position;
@@ -27,13 +31,25 @@ public class PlataformManager : MonoBehaviour
         {
             platform.DeactivateAllObjects(); 
         }
+        foreach (var secureplatform in securePlatformPrefabs)
+        {
+            secureplatform.DeactivateAllObjects();
+        }
     }
-
+ 
     public void InstantiatePlatforms(int number)
     {
         for (int i = 0; i < number; i++)
         {
-            InstantiatePoolObjects instantiatePool = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
+            InstantiatePoolObjects instantiatePool;
+            if (platformsInstantiated < 2)
+            {
+                instantiatePool = securePlatformPrefabs[Random.Range(0, securePlatformPrefabs.Length)];
+            } else
+            {
+                instantiatePool = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
+            }
+            platformsInstantiated++;
             Vector3 spawnPosition = Vector3.zero;
             if (lastPlatform != null)
             {
