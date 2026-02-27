@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5731380036579566909}
   - component: {fileID: 1691330032748043396}
+  - component: {fileID: -2585627414914078174}
   m_Layer: 0
   m_Name: Platform 1
   m_TagString: Ground
@@ -70,6 +71,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15.106064, y: 1, z: 15.404001}
   m_Center: {x: -0.004044533, y: 0, z: -0.0003741351}
+--- !u!114 &-2585627414914078174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963092719312893107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad706b4079aec974494a3bc3d8b25db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platform
+  coins: []
 --- !u!1001 &35785935647615837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 862402628078015291, guid: 640b94cf88de4ef459ce14645b2736d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 862402628078015291, guid: 640b94cf88de4ef459ce14645b2736d9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -973,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064517047891178425, guid: fc1e359a90d4e6542b4d8022c50429ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -2.05
       objectReference: {fileID: 0}
     - target: {fileID: 1064517047891178425, guid: fc1e359a90d4e6542b4d8022c50429ce, type: 3}
       propertyPath: m_LocalPosition.y
